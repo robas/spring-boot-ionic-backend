@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -21,11 +23,15 @@ public class Produto implements Serializable {
 	private Integer id;
 	private String nome;
 	private Double preço;
-	
+
 	@JsonBackReference
-	@ManyToMany(mappedBy = "produtos")
+	@ManyToMany
+	@JoinTable(name = "PRODUTO_CATEGORIA",
+		joinColumns = @JoinColumn(name = "produto_id"),
+		inverseJoinColumns = @JoinColumn(name = "categoria_id")
+	)
 	private List<Categoria> categorias = new ArrayList<>();
-	
+
 	public Produto() {
 	}
 
@@ -92,5 +98,5 @@ public class Produto implements Serializable {
 			return false;
 		return true;
 	}
-	
+
 }
