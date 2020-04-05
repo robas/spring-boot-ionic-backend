@@ -1,4 +1,4 @@
-package br.com.worx.cursomc.exceptions;
+package br.com.worx.cursomc.services.exceptions;
 
 public class ObjectNotFoundException extends RuntimeException {
 	private static final long serialVersionUID = 1L;
