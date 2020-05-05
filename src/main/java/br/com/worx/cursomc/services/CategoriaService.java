@@ -3,8 +3,6 @@ package br.com.worx.cursomc.services;
 import java.util.List;
 import java.util.Optional;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
@@ -13,7 +11,6 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import br.com.worx.cursomc.domain.Categoria;
-import br.com.worx.cursomc.domain.Cliente;
 import br.com.worx.cursomc.dto.CategoriaDTO;
 import br.com.worx.cursomc.repositories.CategoriaRepository;
 import br.com.worx.cursomc.services.exceptions.DataIntegrityException;
